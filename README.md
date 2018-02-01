@@ -1,2 +1,2 @@
 # likelihoods
-Probability Distributions library for JavaScript 
+__Probability Distributions library for JavaScript__

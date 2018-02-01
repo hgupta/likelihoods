@@ -1,0 +1,53 @@
+{
+  "name": "likelihoods",
+  "version": "1.0.0",
+  "description": "Probability Distribution library for JavaScript",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hgupta/likelihoods.git"
+  },
+  "author": {
+    "name": "Harsh Gupta",
+    "email": "1045588+hgupta@users.noreply.github.com",
+    "url": "https://hgupta.github.io/"
+  },
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && rollup -c",
+    "test": "ava tests/**/*.js"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "index.js",
+  "browser": "./dist/likelihoods.min.js",
+  "keywords": [
+    "math",
+    "probability",
+    "distribution",
+    "statistics",
+    "cumulative",
+    "random",
+    "gaussian"
+  ],
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.16.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-prettier": "^2.5.0",
+    "prettier": "^1.10.2",
+    "rollup": "^0.55.3",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^3.0.0",
+    "uglify-es": "^3.3.9"
+  },
+  "dependencies": {
+    "crypto-engines": "./crypto-engines/"
+  }
+}
