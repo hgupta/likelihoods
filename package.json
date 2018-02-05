@@ -15,7 +15,7 @@
   "private": false,
   "scripts": {
     "build": "rm -rf dist && mkdir dist && rollup -c",
-    "test": "ava tests/**/*.js"
+    "test": "ava tests/**/test_*.js --verbose"
   },
   "engines": {
     "node": "*"
@@ -48,6 +48,6 @@
     "uglify-es": "^3.3.9"
   },
   "dependencies": {
-    "crypto-engines": "./crypto-engines/"
+    "crypto-engines": "git://github.com/hgupta/crypto-engines.git"
   }
 }

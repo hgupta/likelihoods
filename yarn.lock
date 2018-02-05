@@ -1147,8 +1147,9 @@ cryptiles@2.x.x:
   dependencies:
     boom "2.x.x"
 
-crypto-engines@./crypto-engines/:
+"crypto-engines@git://github.com/hgupta/crypto-engines.git":
   version "1.0.0"
+  resolved "git://github.com/hgupta/crypto-engines.git#14bfe3af011b7f98e82b7e3b35854d32ede385ff"
 
 crypto-random-string@^1.0.0:
   version "1.0.0"
