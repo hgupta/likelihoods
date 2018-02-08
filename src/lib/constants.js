@@ -17,8 +17,8 @@ constants.gaussianCDF = {
   A5: 1.061405429
 }
 
-constants.sqrtPi = Math.sqrt(Math.PI)
-constants.sqrt2Pi = Math.sqrt(2 * Math.PI)
+constants.sqrtPI = Math.sqrt(Math.PI)
+constants.sqrt2PI = Math.sqrt(2 * Math.PI)
 constants.exp1 = 2.7182818284590452354
 constants.sqrt2 = 1.4142135623730950488
 constants.sqrt5 = 2.2360679774997896964

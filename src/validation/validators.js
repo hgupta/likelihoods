@@ -23,18 +23,23 @@ validators.isNotInfinity = compose(
 )
 
 validators.isGreaterThanEqualTo = min => n =>
-  n >= min || `must be greater than or equal to ${min}`
+  (validators.isNumber(n) && n >= min) ||
+  `must be greater than or equal to ${min}`
 
-validators.isGreaterThan = min => n => n > min || `must be greater than ${min}`
+validators.isGreaterThan = min => n =>
+  (validators.isNumber(n) && n > min) || `must be greater than ${min}`
 
 validators.isLessThanEqualTo = max => n =>
-  n <= max || `must be less than or equal to ${max}`
+  (validators.isNumber(n) && n <= max) || `must be less than or equal to ${max}`
 
-validators.isLessThan = max => n => n <= max || `must be less than ${max}`
+validators.isLessThan = max => n =>
+  (validators.isNumber(n) && n < max) || `must be less than ${max}`
 
-validators.isInteger = n => Number.isInteger(n) || 'must be an Integer'
+validators.isInteger = n =>
+  (validators.isNumber(n) && Number.isInteger(n)) || 'must be an Integer'
 
-validators.isNatural = validators.isGreaterThanEqualTo(1)
+validators.isNatural = n =>
+  validators.isNumber(n) && validators.isGreaterThanEqualTo(1)(n)
 
 validators.isProbability = compose(
   r => (r.constructor === String ? r : !!r),
