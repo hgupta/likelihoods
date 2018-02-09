@@ -51,6 +51,11 @@ Please check usage of `random` method.
 #### ES7 / ES6 / Modules
 ```javascript
 import likelihoods from 'likelihoods'
+// You may `require` a specific distribution instead of all distributions
+// this will save you a lot of build space if you need only specific
+// distribution
+import normal from 'likelihoods/src/normal'
+import poisson from 'likelihoods/src/poisson'
 ```
 
 #### NodeJS / CommonJS
@@ -73,13 +78,11 @@ Adds a global name `likelihoods` in `window` object.
 #### Examples
 
 > Initializing a distribution
-
 ```javascript
 const norm = likelihoods.normal(/* arguments */)
 ```
 
 > Drawing a random
-
 ```javascript
 norm.random(/* { shape, ranf } */)
 ```
