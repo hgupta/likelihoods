@@ -78,7 +78,7 @@ const norm = likelihoods.normal(/* arguments */)
 ```javascript
 norm.random(/* { shape, ranf } */)
 ```
-`random` function accepts an `Object` as __optional__ first argument.
+`random` function accepts an `Object` as an __optional__ argument.
 
 - `ranf`: Custom random number generator. Must be a function with no parameters.
 - `shape`: Accepts an array of integers. Returns nested array(s) of given shape.
@@ -86,25 +86,21 @@ It follows row-wise vector pattern, so `shape: [5]` will create 5 inner arrays
 within an outer array, `[[f1], [f2], [f3], [f4], [f5]]`
 
 > Probability Density Function (PDF) for `x`
-
 ```javascript
 norm.pdf(/* scalar value or array of scalar values */)
 ```
 
 > Cumulative Density Function (CDF) for `x`
-
 ```javascript
 norm.cdf(/* scalar value or array of scalar values */)
 ```
 
 > Mean of distribution
-
 ```javascript
 norm.mean()
 ```
 
 > Variance of distribution
-
 ```javascript
 norm.variance()
 ```
@@ -113,65 +109,66 @@ norm.variance()
 
 | Distribution Name   | Function Name | Parameters (default)    |
 | ------------------- | ------------- | ----------------------- |
-| Beta                | `beta`        | `alpha`, `beta` (0, 0)  |
+| Beta                |               |                         |
 | Bernoulli           | `bernoulli`   | `p` (0.5)               |
 | Binomial            | `binomial`    | `n`, `p` (10, 0.5)      |
-| Cauchy              | `cauchy`      |                         |
+| Cauchy              | `cauchy`      | `loc`, `scale` (0, 1)   |
 | Chisquare           | `chisquare`   | `df` (1)                |
-| &#8252; Dirichlet   | `dirichlet`   |                         |
+| Dirichlet           |               |                         |
 | Exponential         | `exponential` | `lambda` (1)            |
-| &#8252; F           | `f`           |                         |
+| F                   |               |                         |
 | Gamma               | `gamma`       | `shape`, `scale` (1, 1) |
-| &#8252; Geometric   | `geometric`   |                         |
-| Gumbel              | `gumbel`      | `loc`, `scale` (0, 1)   |
-| &#8252; HyperGeometric | `hypergeometric` |                   |
+| Geometric           |               |                         |
+| Gumbel              |               |                         |
+| HyperGeometric      |               |                         |
 | Laplace             | `laplace`     | `loc`, `scale` (0, 1)   |
-| Logistic            | `logistic`    | `loc`, `scale` (0, 1)   |
-| Log-normal          | `lognormal`   | `mean`, `sigma` (0, 1)  |
-| &#8252; Logseries   | `logseries`   |                         |
-| &dagger; Lomax      | `lomax`       | `shape` (1)             |
-| &#8252; Multinomial | `multinomial` |                         |
-| Neg-&#8252; Binomial| `negbinomial` |                         |
+| Logistic            |               |                         |
+| LogNormal           | `lognormal`   | `mean`, `sigma` (0, 1)  |
+| Logseries           |               |                         |
+| Lomax               |               |                         |
+| Multinomial         |               |                         |
+| Multivariate Normal |               |                         |
+| Neg-Binomial        |               |                         |
 | Normal              | `normal`      | `loc`, `scale` (0, 1)   |
 | Poisson             | `poisson`     | `lambda` (10)           |
-| &dagger; Power      | `power`       | `alpha` (1)             |
+| Power               |               |                         |
 | Rayleigh            | `rayleigh`    | `scale` (1)             |
 | Student's t         | `t`           |                         |
-| &#8252; Triangular  | `triangular`  |                         |
+| Triangular          |               |                         |
 | Uniform             | `uniform`     | `min`, `max` (0, 1)     |
-| &dagger; Weibull    | `weibull`     | `alpha` (1)             |
-| &#8252; Zipf        | `zipf`        |                         |
-
-__&#8252;__ : Not implemented. In progress.
-
-__&dagger;__ : Incomplete. Samples can be drawn but other functions may not be
-available yet.
+| Wald                |               |                         |
+| Weibull             |               |                         |
+| Zipf                |               |                         |
 
 ## References
-- [Handbook of Mathematical Functions][NIST-HMF]
+- [Handbook of Mathematical Functions][nist-hmf]
+- [NIST Digital Library of Mathematical Functions][dlmf-nist]
 - [Scipy / Numpy][numpy]
 - [Gauss Error Function][error_fn]
 - [Box-Muller Transformation][box-muller]
+- [Spouge's approximation for Gamma function][gamma-fn]
+- [The transformed rejection method for generating Poisson random variables][poisson-ptrs]
+- [Wikipedia _(is not bad for referencing, just be cautious)_][wiki]
 
 ## TODO:
-
 - Complete Test Suite using Ava
 - Add Travis CI
-- More distribution functions
-  - multivariate-normal
-  - wald
 - Better / Faster Normal Distribution Algorithm
-- Better Poission Distribution Algorithm for lambda > 30 (Transformed Rejection)
 - Better Binomial Distribution Algorithm (BTPE & Inversion)
 
 ## License
-MIT
+MIT License, Copyright (c) 2018 Harsh Gupta, [LICENSE][license]
 
 
   [charting]: https://github.com/hgupta/likelihoods-charting
   [demo]: https://hgupta.github.io/likelihoods
   [crypto-engine]: https://github.com/hgupta/crypto-engines
-  [NIST-HMF]: http://people.math.sfu.ca/~cbm/aands/intro.htm
+  [nist-hmf]: http://people.math.sfu.ca/~cbm/aands/intro.htm
+  [dlmf-nist]: https://dlmf.nist.gov/
   [numpy]: https://docs.scipy.org/doc/numpy/reference/routines.random.html
   [error_fn]: https://en.wikipedia.org/wiki/Error_function#Approximation_with_elementary_functions
   [box-muller]: http://www.design.caltech.edu/erik/Misc/Gaussian.html
+  [gamma-fn]: https://deamentiaemundi.wordpress.com/2013/06/29/the-gamma-function-with-spouges-approximation/
+  [license]: https://github.com/hgupta/likelihoods/blob/master/LICENSE
+  [poisson-ptrs]: https://www.sciencedirect.com/science/article/pii/0167668793909974
+  [wiki]: https://en.wikipedia.org/wiki/
