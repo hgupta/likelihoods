@@ -5,7 +5,7 @@ const isGTE = require('./validation/validators').isGreaterThanEqualTo
 const isLTE = require('./validation/validators').isLessThanEqualTo
 
 const poissonAlgos = require('./lib/poisson')
-const gamma = require('./lib/gamma').gamma
+const gamma = require('./lib/gamma-fn').gamma
 
 const addRandomMethod = require('./concerns/add-random-method')
 const _density = require('./concerns/add-density-method')
