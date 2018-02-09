@@ -56,6 +56,11 @@ import likelihoods from 'likelihoods'
 #### NodeJS / CommonJS
 ```javascript
 const likelihoods = require('likelihoods')
+// You may `require` a specific distribution instead of all distributions
+// this will save you a lot of build space if you need only specific
+// distribution
+const normal = require('likelihoods/src/normal')
+const poisson = require('likelihoods/src/poisson')
 ```
 
 #### Browser
