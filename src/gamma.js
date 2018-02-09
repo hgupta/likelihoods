@@ -3,7 +3,7 @@ const validate = require('./validation/validate')
 const isGreaterThan = require('./validation/validators').isGreaterThan
 
 const gr = require('./lib/gamma-rand')
-const gamma = require('./lib/gamma-fn').gamma
+const gammaFn = require('./lib/gamma-fn').gamma
 const gammainc = require('./lib/gammainc')
 
 const exponential = require('./exponential')
@@ -13,7 +13,7 @@ const addRandomMethod = require('./concerns/add-random-method')
 const _density = require('./concerns/add-density-method')
 const staticProps = require('./concerns/add-static-props')
 
-const poisson = (shape = 1, scale = 1) => {
+const gamma = (shape = 1, scale = 1) => {
   validate('shape', shape, isGreaterThan(0))
   validate('scale', scale, isGreaterThan(0))
 
@@ -21,7 +21,7 @@ const poisson = (shape = 1, scale = 1) => {
   const norm = normal().random
 
   const scalePowShape = scale ** shape
-  const gammaShapeInv = 1 / gamma(shape)
+  const gammaShapeInv = 1 / gammaFn(shape)
   const constPDF = gammaShapeInv * (1 / scalePowShape)
 
   return Object.assign(
@@ -48,4 +48,4 @@ const poisson = (shape = 1, scale = 1) => {
   )
 }
 
-module.exports = exports = poisson
+module.exports = exports = gamma

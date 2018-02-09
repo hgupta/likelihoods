@@ -16,7 +16,7 @@ const addRandomMethod = require('./concerns/add-random-method')
 const _density = require('./concerns/add-density-method')
 const staticProps = require('./concerns/add-static-props')
 
-const exponential = (loc = 0, scale = 1) =>
+const laplace = (loc = 0, scale = 1) =>
   validate('lambda', lambda, isNumber, isGreaterThan(0)) &&
   Object.assign(
     {},
@@ -33,4 +33,4 @@ const exponential = (loc = 0, scale = 1) =>
     _density.addCDFMethod(compose(e => 1 - e, Math.exp, x => -lambda * x))
   )
 
-module.exports = exports = exponential
+module.exports = exports = laplace

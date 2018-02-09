@@ -11,7 +11,7 @@ const staticProps = require('./concerns/add-static-props')
 
 const factorial = require('./lib/factorial')
 
-const binomial = (loc = 0, scale = 1) =>
+const cauchy = (loc = 0, scale = 1) =>
   validate('loc', loc, isNumber) &&
   validate('scale', scale, isNumber, isGreaterThan(0)) &&
   Object.assign(
@@ -36,4 +36,4 @@ const binomial = (loc = 0, scale = 1) =>
     )
   )
 
-module.exports = exports = binomial
+module.exports = exports = cauchy
