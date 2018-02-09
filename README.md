@@ -132,8 +132,8 @@ norm.variance()
 | Normal              | `normal`      | `loc`, `scale` (0, 1)   |
 | Poisson             | `poisson`     | `lambda` (10)           |
 | Power               |               |                         |
-| Rayleigh            | `rayleigh`    | `scale` (1)             |
-| Student's t         | `t`           |                         |
+| Rayleigh            |               |                         |
+| Student's t         |               |                         |
 | Triangular          |               |                         |
 | Uniform             | `uniform`     | `min`, `max` (0, 1)     |
 | Wald                |               |                         |
