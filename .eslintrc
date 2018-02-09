@@ -12,5 +12,9 @@
   },
   "parserOptions": {
     "ecmaVersion": 7
-  }
+  },
+  "overrides": [{
+    "files": "rollup.config.js",
+    "parserOptions": { "sourceType": "module" }
+  }]
 }
