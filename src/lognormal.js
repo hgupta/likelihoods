@@ -31,16 +31,15 @@ const lognormal = (mean = 0, sigma = 1) =>
     ),
     _density.addPDFMethod(
       compose(
-        ([x, v]) => v / (x * sigma * constants.sqrt2Pi),
-        ([x, num, denom]) => [x, Math.exp(-num / denom)],
-        ([x, num]) => [x, num, 2 * sigma * sigma],
+        ([x, v]) => (x <= 0 ? 0 : v / (x * sigma * constants.sqrt2PI)),
+        ([x, num]) => [x, Math.exp(-(num / (2 * sigma * sigma)))],
         x => [x, (Math.log(x) - mean) * (Math.log(x) - mean)]
       )
     ),
     _density.addCDFMethod(
       compose(
         x => 0.5 * (1 + error_fn(x)),
-        x => (Math.log(x) - mean) / (sigma * constants.sqrt2)
+        x => (Math.log(x) - mean) / (Math.sqrt(sigma) * constants.sqrt2)
       )
     )
   )

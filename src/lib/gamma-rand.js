@@ -2,7 +2,7 @@ const compose = require('../fp/compose')
 
 const _xv = (ranf, norm, shape, c) =>
   compose(
-    ([X, V]) => (V <= 0 ? _xv(ranf, norm, shape, c) : [X, V]),
+    ([X, V]) => (V <= 0 ? _xv(ranf, norm, shape, c)() : [X, V]),
     X => [X, 1.0 + c * X],
     () => norm({ ranf })
   )
@@ -29,7 +29,9 @@ const normalized = (ranf, norm, shape) =>
 const exponentialized = (ranf, exp, shape) =>
   compose(
     ([U, V, b, Y, X]) =>
-      b && X <= V ? X : !b && X <= V + Y ? X : l(ranf, exp, shape),
+      b && X <= V
+        ? X
+        : !b && X <= V + Y ? X : exponentialized(ranf, exp, shape),
     ([U, V, b, Y]) => [
       U,
       V,
