@@ -38,8 +38,8 @@ const lognormal = (mean = 0, sigma = 1) =>
     ),
     _density.addCDFMethod(
       compose(
-        x => 0.5 * (1 + error_fn(x)),
-        x => (Math.log(x) - mean) / (Math.sqrt(sigma) * constants.sqrt2)
+        x => 0.5 + 0.5 * error_fn(x),
+        x => (Math.log(x) - mean) / (sigma * constants.sqrt2)
       )
     )
   )
