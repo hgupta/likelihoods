@@ -151,7 +151,7 @@ norm.variance()
 ## References
 - [Handbook of Mathematical Functions][nist-hmf]
 - [NIST Digital Library of Mathematical Functions][dlmf-nist]
-- [Luv Devroye - Non-Uniform Random Variate Generation][devroye]
+- [Luc Devroye - Non-Uniform Random Variate Generation][devroye]
 - [Scipy / Numpy][numpy]
 - [Gauss Error Function][error_fn]
 - [Box-Muller Transformation][box-muller]
