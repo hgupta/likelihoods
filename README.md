@@ -151,6 +151,7 @@ norm.variance()
 ## References
 - [Handbook of Mathematical Functions][nist-hmf]
 - [NIST Digital Library of Mathematical Functions][dlmf-nist]
+- [Luv Devroye - Non-Uniform Random Variate Generation][devroye]
 - [Scipy / Numpy][numpy]
 - [Gauss Error Function][error_fn]
 - [Box-Muller Transformation][box-muller]
@@ -173,6 +174,7 @@ MIT License, Copyright (c) 2018 Harsh Gupta, [LICENSE][license]
   [crypto-engine]: https://github.com/hgupta/crypto-engines
   [nist-hmf]: http://people.math.sfu.ca/~cbm/aands/intro.htm
   [dlmf-nist]: https://dlmf.nist.gov/
+  [devroye]: http://luc.devroye.org/rnbookindex.html
   [numpy]: https://docs.scipy.org/doc/numpy/reference/routines.random.html
   [error_fn]: https://en.wikipedia.org/wiki/Error_function#Approximation_with_elementary_functions
   [box-muller]: http://www.design.caltech.edu/erik/Misc/Gaussian.html
