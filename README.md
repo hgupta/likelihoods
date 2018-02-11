@@ -121,7 +121,7 @@ norm.variance()
 | Bernoulli           | `bernoulli`   | `p` (0.5)               |
 | Binomial            | `binomial`    | `n`, `p` (10, 0.5)      |
 | Cauchy              | `cauchy`      | `loc`, `scale` (0, 1)   |
-| Chisquare           | `chisquare`   | `df` (1)                |
+| Chi-squared         | `chisquared`  | `df` (1)                |
 | Dirichlet           |               |                         |
 | Exponential         | `exponential` | `lambda` (1)            |
 | F                   |               |                         |
@@ -131,7 +131,7 @@ norm.variance()
 | HyperGeometric      |               |                         |
 | Laplace             | `laplace`     | `loc`, `scale` (0, 1)   |
 | Logistic            |               |                         |
-| LogNormal           | `lognormal`   | `mean`, `sigma` (0, 1)  |
+| Log-noral           | `lognormal`   | `mean`, `sigma` (0, 1)  |
 | Logseries           |               |                         |
 | Lomax               |               |                         |
 | Multinomial         |               |                         |

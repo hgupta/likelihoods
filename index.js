@@ -1,7 +1,7 @@
 const bernoulli = require('./src/bernoulli')
 const binomial = require('./src/binomial')
 const cauchy = require('./src/cauchy')
-const chisquare = require('./src/chisquare')
+const chisquared = require('./src/chisquared')
 const exponential = require('./src/exponential')
 const gamma = require('./src/gamma')
 const laplace = require('./src/laplace')
@@ -12,7 +12,7 @@ const uniform = require('./src/uniform')
 
 /* eslint-disable */
 module.exports = exports = {
-  bernoulli, binomial, cauchy, chisquare, exponential, gamma, laplace,
+  bernoulli, binomial, cauchy, chisquared, exponential, gamma, laplace,
   lognormal, normal, poisson, uniform
 }
 /* eslint-enable */
